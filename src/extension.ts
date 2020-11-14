@@ -8,7 +8,7 @@ function create_name_input()
 {
 	var option: vscode.InputBoxOptions = {
 		ignoreFocusOut: false,
-		placeHolder: "foo it in the bar.",
+		placeHolder: "name of your class.",
 		prompt: "Type your class name"
 	};
 	return vscode.window.showInputBox(option);
@@ -18,17 +18,19 @@ async function create_path_input()
 {
 	var option: vscode.InputBoxOptions = {
 		ignoreFocusOut: false,
-		placeHolder: "Give me your path.",
+		placeHolder: "The path that your files will be created",
 		prompt: "Type a valid path"
 	};
 	return await vscode.window.showInputBox(option);
 }
 
-function create_hpp(name: string, dir: string)
+function create_header_file(name: string, dir: string)
 {
-	var hpp_buffer =
-		`
-#pragma once
+	var header_buffer =
+	`
+#ifndef ARDUINO_`+name.toUpperCase() +`_H
+#define ARDUINO_`+name.toUpperCase() +`_H
+#include <Arduino.h>
 
 class ` + name +`  
 {
@@ -39,9 +41,11 @@ class ` + name +`
 		`+ name +`();
 		~`+name+`();
 
-};`;
-	var hpp_name = dir+"/"+name + '.hpp';
-	fs.writeFile(hpp_name, hpp_buffer, function (err)
+};
+#endif
+`;
+	var header_name = dir+"/"+name + '.h';
+	fs.writeFile(header_name, header_buffer, function (err)
 	{
 		if (err) {
 			console.error(err);
@@ -53,10 +57,10 @@ class ` + name +`
 	return true;
 }
 
-function create_cpp(name: string, dir: string)
+function create_arduino(name: string, dir: string)
 {
-	var cpp_buffer =
-`#include "` + name +`.hpp"  
+	var arduino_buffer =
+`#include "` + name +`.h"  
 
 `+name+`::`+ name +`()
 {
@@ -67,8 +71,8 @@ function create_cpp(name: string, dir: string)
 {
 
 }`;
-	var cpp_name = dir+"/"+name + '.cpp';
-	fs.writeFile(cpp_name, cpp_buffer, function (err)
+	var arduino_name = dir+"/"+name + '.cpp';
+	fs.writeFile(arduino_name, arduino_buffer, function (err)
 	{
 		if (err) {
 			console.error(err);
@@ -118,10 +122,10 @@ function create_class(name: string, dir: string)
 	else
 		fs.mkdirSync(dir);
 
-	var hpp = create_hpp(name, dir);
-	var cpp = create_cpp(name, dir);
+	var header = create_header_file(name, dir);
+	var arduino = create_arduino(name, dir);
 
-	return (hpp && cpp);
+	return (header && arduino);
 }
 
 // this method is called when your extension is activated
@@ -130,7 +134,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "cpp-class-creator" is now active!');
+	console.log('Congratulations, your extension "arduino-class-creator" is now active!');
 
 	let disposable = vscode.commands.registerCommand('extension.createClass', () => {
 		// The code you place here will be executed every time your command is executed
@@ -152,12 +156,12 @@ export function activate(context: vscode.ExtensionContext) {
 				vscode.window.showErrorMessage("Class name should not have spaces!");
 				return;
 			}
-			let dir :string | undefined | boolean= vscode.workspace.getConfiguration().get("cpp.creator.setPath");
+			let dir :string | undefined | boolean= vscode.workspace.getConfiguration().get("arduino.creator.setPath");
 			if (dir == false)
 				dir = null as any;
 			if (dir == null) {
 				dir = vscode.workspace.rootPath as string;
-				let createFolder: boolean | undefined = vscode.workspace.getConfiguration().get("cpp.creator.createFolder");
+				let createFolder: boolean | undefined = vscode.workspace.getConfiguration().get("arduino.creator.createFolder");
 				if (createFolder)
 					dir += "/" + res;
 			}
@@ -172,7 +176,7 @@ export function activate(context: vscode.ExtensionContext) {
 			var out = create_class(res, dir as string);
 			if (out)
 			{
-				if (vscode.workspace.getConfiguration("cpp.sfml.addClassToTask"))
+				if (vscode.workspace.getConfiguration("arduino.sfml.addClassToTask"))
 				{
 					var test: string = vscode.workspace.rootPath+"";
 					add_to_task(res, test);

@@ -1,9 +1,6 @@
-# Change Log
 
-All notable changes to the "cpp-class-creator" extension will be documented in this file.
+### 1.0.0
+Init release of arduino Class Creator.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+### 1.0.1
+Minimal changes in texts and tags

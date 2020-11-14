@@ -16,7 +16,9 @@
 	],
 	"keywords": [
         "cpp",
-        "avr",
+		"avr",
+		"c++",
+		"keybindings",
         "framework",
         "arduino"
     ],

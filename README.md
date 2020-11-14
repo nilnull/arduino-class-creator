@@ -2,8 +2,7 @@
 
 A simple and easy to use Arduino Class Creator with multiple settings 
 
-## Features
-
+## How to use
 Press **Alt**+**X** to open the Input Field to create a class, <span style="color:red">**while you are focusing the editor!**</span>
 
 Type in the name, and there you go. You will directly see, when the file is created.
@@ -12,12 +11,22 @@ Additionally, you can set the path where the file has to be created: check Setti
 
 ![Demo](https://github.com/nilnull/arduino-class-creator/blob/master/giphy.gif?raw=true)
 
+
+## Features
+- Generates header and class files
+- Can use different path and folders
+- Auto creates constructor and deconstruction
+- Auto generates header guard
+
+
 ## Known Issues
 
--Class can be created, while the language is not arduino
+-Nothing yet
 
-## Settings [settings.json of VS-Code]
 
+## Settings
+
+[settings.json of VS-Code]
 ```"arduino.sfml.*" - ``` Experimental, not really usefull, just for my private usage
 
 ```"arduino.creator.setPath": = "string" | null | boolean : [NULL by default] ``` set your path where the class should be created as a string. When it's null your class will be created in the current workspace. Set it to true, when you want a input window to appear on every class creation where you can set creation path. On false or on an empty path input box it will also be created in the current workspace.
@@ -29,8 +38,12 @@ Make Pull Request when you have feature ideas.
 
 
 
+---
+**NOTE**
 
-This is highly inspired by Maxim's extension ![arduino class creator](https://github.com/tzAcee/arduino-class-creator)
+This is highly inspired by Maxim's extension [arduino class creator](https://github.com/tzAcee/arduino-class-creator) 
+
+---
 
 ## Release Notes
 
