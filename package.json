@@ -21,7 +21,10 @@
 		"keybindings",
         "framework",
         "arduino"
-    ],
+	],
+	"activationEvents": [
+		"onCommand:extension.createClass"
+	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [

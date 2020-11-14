@@ -41,7 +41,7 @@ Make Pull Request when you have feature ideas.
 ---
 **NOTE**
 
-This is highly inspired by Maxim's extension [arduino class creator](https://github.com/tzAcee/arduino-class-creator) 
+This is highly inspired by Maxim's extension [c++ class creator](https://github.com/tzAcee/cpp-class-creator) 
 
 ---
 
