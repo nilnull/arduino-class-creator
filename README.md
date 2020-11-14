@@ -44,11 +44,3 @@ Make Pull Request when you have feature ideas.
 This is highly inspired by Maxim's extension [c++ class creator](https://github.com/tzAcee/cpp-class-creator) 
 
 ---
-
-## Release Notes
-
-### 1.0.0
-Init release of arduino Class Creator.
-
-### 1.0.1
-Minimal changes in texts and tags
