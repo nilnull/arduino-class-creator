@@ -3,7 +3,7 @@
 A simple and easy to use Arduino Class Creator with multiple settings 
 
 ## How to use
-Press **Alt**+**X** to open the Input Field to create a class, <span style="color:red">**while you are focusing the editor!**</span>
+Press **Alt**+**X** (or **⌥**+**X** in Mac) to open the Input Field to create a class, <span style="color:red">**while you are focusing the editor!**</span>
 
 Type in the name, and there you go. You will directly see, when the file is created.
 

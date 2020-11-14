@@ -12,15 +12,17 @@
 		"vscode": "^1.41.0"
 	},
 	"categories": [
-		"Other" , "Extension Packs", "Language Packs"
+		"Other",
+		"Extension Packs",
+		"Language Packs"
 	],
 	"keywords": [
-        "cpp",
+		"cpp",
 		"avr",
 		"c++",
 		"keybindings",
-        "framework",
-        "arduino"
+		"framework",
+		"arduino"
 	],
 	"activationEvents": [
 		"onCommand:extension.createClass"
