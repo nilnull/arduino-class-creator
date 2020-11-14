@@ -1,8 +1,7 @@
-# A simple C++ Class Creator with multiple settings :alien:
+# A simple Arduino Class Creator with multiple settings 
 
-Hey I'm Maxim. I wanted created a little c++ extension to create classes.
+This is highly incpired by Maxim's extention ![CPP class creator](https://github.com/tzAcee/cpp-class-creator)
 
-I can work on it when I have time in order to improve it. Just open some Issues or Pull Request. Im happy to work on them!
 
 ## Features
 
@@ -10,13 +9,13 @@ Press **Alt**+**X** to open the Input Field to create a class, <span style="colo
 
 Type in the name, and there you go. You will directly see, when the file is created.
 
-Additionaly you can set the path where the file has to be created: check Settings at the bottom.
+Additionally, you can set the path where the file has to be created: check Settings at the bottom.
 
-![Demo](https://github.com/tzAcee/cpp-class-creator/blob/master/giphy.gif?raw=true)
+![Demo](https://github.com/nilnull/arduino-class-creator/blob/master/giphy.gif?raw=true)
 
 ## Known Issues
 
--Class can be created, while the language is not c++
+-Class can be created, while the language is not arduino
 
 ## Settings [settings.json of VS-Code]
 
@@ -26,40 +25,13 @@ Additionaly you can set the path where the file has to be created: check Setting
 
 ```"cpp.creator.createFolder": = boolean : [FALSE by default] ``` set it to true, so a folder for the class will be created in your workspace -> Only possible when setPath is null.
 
-## Release Notes
-
-Init release of C++ Class Creator.
-Have fun.
-
 Make Pull Request when you have feature ideas.
 
-### 0.10.0
-
-- Added header protection
-- Fixed some issues from the github repository
-- Added Settings [See all available under "Settings"]
-- Increased max class length to 60
-
-### 0.3-0.5.0
-
-Demo + minor documentation
-
-### 0.2.0
-
-Icon Uploaded
-
-### 0.1.0
-
-Some minor Error Handeling
 
 
-### 0.0.1
+## Release Notes
 
-Initial release of C++ Class Creator
 
-----------------------------------------------------------------------------------------------------------
 
-**Enjoy!**
-
-                    GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+### 1.0.0
+Init release of arduino Class Creator.

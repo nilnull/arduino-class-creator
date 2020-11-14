@@ -1,13 +1,13 @@
 {
-	"name": "cpp-class-creator",
-	"displayName": "C++ Class Creator",
-	"description": "A very simple class creation extension for Visual Studio Code from FleeXo",
-	"publisher": "FleeXo",
+	"name": "arduino-class-creator",
+	"displayName": "Arduino Class Creator",
+	"description": "A very simple c++ Arduino class creation extension for Visual Studio Code from PKI.Tools",
+	"publisher": "PKI.tools",
 	"icon": "icon/logo.png",
 	"repository": {
-		"url": "https://github.com/tzAcee/cpp-class-creator.git"
+		"url": "https://github.com/nilnull/arduino-class-creator.git"
 	},
-	"version": "0.17.0",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -37,15 +37,15 @@
 				"id": "cpp",
 				"extensions": [
 					".cpp",
-					".hpp"
+					".h"
 				]
 			}
 		],
 		"configuration": [
 			{
-				"title": "C++ Class SFML Extension [Experimental]",
+				"title": "Arduino Class SFML Extension",
 				"properties": {
-					"cpp.sfml.addClassToTask": {
+					"arduino.sfml.addClassToTask": {
 						"type": "boolean",
 						"default": false,
 						"description": "For my own experimental purposes. Adds the created file to the gcc parameters for building sfml project."
@@ -55,16 +55,16 @@
 			{
 				"title": "C++ Class Creator",
 				"properties": {
-					"cpp.creator.setPath": {
+					"arduino.creator.setPath": {
 						"type": [
 							"string",
 							"null",
 							"boolean"
 						],
 						"default": null,
-						"description": "Specifies the path, where the class is created or set it to true when you want the path to be dynamically inputted. [setting: cpp.creator.setPath = \"path\" or true]"
+						"description": "Specifies the path, where the class is created or set it to true when you want the path to be dynamically inputted. [setting: arduino.creator.setPath = \"path\" or true]"
 					},
-					"cpp.creator.createFolder": {
+					"arduino.creator.createFolder": {
 						"type": "boolean",
 						"default": false,
 						"description": "Create an extra folder for the class."
