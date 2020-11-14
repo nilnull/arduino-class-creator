@@ -1,22 +1,25 @@
 {
 	"name": "arduino-class-creator",
-	"displayName": "Arduino Class Creator",
+	"displayName": "Arduino C++ Class Creator",
 	"description": "A very simple c++ Arduino class creation extension for Visual Studio Code from PKI.Tools",
-	"publisher": "PKI.tools",
+	"publisher": "farhang0393",
 	"icon": "icon/logo.png",
 	"repository": {
 		"url": "https://github.com/nilnull/arduino-class-creator.git"
 	},
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
 	"categories": [
-		"Other"
+		"Other" , "Extension Packs", "Language Packs"
 	],
-	"activationEvents": [
-		"onCommand:extension.createClass"
-	],
+	"keywords": [
+        "cpp",
+        "avr",
+        "framework",
+        "arduino"
+    ],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
